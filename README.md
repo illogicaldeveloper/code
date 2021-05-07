@@ -1,3 +1,3 @@
 # code
 
-Some .c program files
+Some C program files/headers .
