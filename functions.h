@@ -25,20 +25,6 @@ void color(char *strColor) {
     if (strcmp(strColor,"yellow") == 0) printf( "\033[0;37m" ); 
 }
 
-void trim(char * s) {
-    char * p = s; int l = strlen(p);
-    while(isspace(p[l - 1])) p[--l] = 0;
-    while(* p && isspace(* p)) ++p, --l;
-    memmove(s, p, l + 1);
-}
-
-void rem(char * s, char *what) {
-    char * p = s; int l = strlen(p);
-    while(p[l - 1] == what[0]) p[--l] = 0;
-    while(* p && (*p == what[0])) ++p, --l;
-    memmove(s, p, l + 1);
-}
-
 void cls() {
     system( "clear || cls" );
 }
