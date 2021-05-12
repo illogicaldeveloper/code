@@ -34,10 +34,10 @@ int putline( int x1, int y1, int x2, int y2 ) {
 int putpxl( int x, int y ) {
     SDL_RenderDrawPoint( renderer, x, y );
 }
-
 int color( int r, int g, int b, int a ) {
     SDL_SetRenderDrawColor(renderer, r, g, b, a);        
 }
+    
 // ** utilities
 int drawBox(int x,int y,int w, int h) {    
     int xx = x, yy = y;
@@ -76,26 +76,26 @@ return 0; }
 
 
 while (!quit) {
-        // SDL_WaitEvent(&event);
-        SDL_Delay(20);
-        SDL_PollEvent(&event);
-        switch (event.type) { 
-            case SDL_QUIT:
+    // SDL_WaitEvent(&event);
+    SDL_Delay(20);
+    SDL_PollEvent(&event);
+    switch (event.type) { 
+        case SDL_QUIT:
             quit = 1;
-            break;
-        }        
+        break;
+    }        
  
-        SDL_RenderClear(renderer);
+    SDL_RenderClear(renderer);
         
-        rasterize();
+    rasterize();
 
-        SDL_RenderPresent(renderer);
-    }
+    SDL_RenderPresent(renderer);
+}
 
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(win);
+SDL_DestroyRenderer(renderer);
+SDL_DestroyWindow(win);
 
-    SDL_Quit();
+SDL_Quit();
 
     return 0;
 }
