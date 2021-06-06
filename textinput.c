@@ -4,7 +4,7 @@
 int main() {
     char input[128];
     printf( "COMMAND: " );
-    scanf( "%127[^\n]", input );
+    fgets( input, 128, stdin ); 
     printf( "-+> {%s} \n", input );
     return 0;
 }
